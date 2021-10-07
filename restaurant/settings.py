@@ -147,7 +147,7 @@ STATICFILES_DIRS = (
 SASS_PROCESSOR_ROOT = STATIC_ROOT
 
 SASS_PROCESSOR_INCLUDE_DIRS = [
-    os.path.join(BASE_DIR, 'node_modules')
+    os.path.join(BASE_DIR, 'node_modules'),
 ]
 SASS_PRECISION = 8
 
