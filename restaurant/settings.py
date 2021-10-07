@@ -15,7 +15,8 @@ import os
 import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&k3q+pmu)5%asj6yjpkag')
 
 # Quick-start development settings - unsuitable for production
@@ -83,9 +84,9 @@ WSGI_APPLICATION = 'restaurant.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    "default": {
+        "ENGINE" : "django.db.backends.sqlite3",
+        "NAME": os.path.join(BASE_DIR, "db.sqlite3")
     }
 }
 
@@ -133,8 +134,12 @@ STATICFILES_FINDERS = [
     'compressor.finders.CompressorFinder'
 ]
 
-STATIC_URL = 'static/'
-STATIC_ROOT = 'restaurant/menu/static'
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/1.9/howto/static-files/
+STATIC_ROOT = os.path.join(BASE_DIR, 'menu/static')
+STATIC_URL = '/static/'
+
+# Extra places for collectstatic to find static files.
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
@@ -142,6 +147,7 @@ STATICFILES_DIRS = (
 SASS_PROCESSOR_ROOT = STATIC_ROOT
 
 SASS_PROCESSOR_INCLUDE_DIRS = [
+    os.path.join(BASE_DIR, 'node_modules')
     BASE_DIR / 'node_modules',
 ]
 SASS_PRECISION = 8
