@@ -28,8 +28,12 @@ SECRET_KEY = 'django-insecure-ts6841xqn__z$c_^*np$swa4-^gue+3be4w!rd4m(5d+$yjg6^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
+# ALLOWED_HOSTS = [
+#     'localhost',
+#     '127.0.0.1'
+# ]
 ALLOWED_HOSTS = [
-    'localhost',
+    'fathomless-taiga-86376.herokuapp.com',
     '127.0.0.1'
 ]
 
