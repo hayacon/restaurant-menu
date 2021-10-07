@@ -1,0 +1,21 @@
+{% include "./header.html" %}
+<body class="drink-menu">
+  {% include "./menu_nav.html" %}
+  {% for category in categories %}
+    <h4 class='menu-title' id="{{ category }}">{{ category }}</h4>
+    {% for drink in drink_menu %}
+      {% if drink.runout == False and drink.active == True %}
+        {% if drink.category == category %}
+          <div class="container-sm" id="menu-item">
+            <h6>{{ drink.item_name }}</h6>
+            <p>{{ drink.description }}</p>
+            {% if drink.sulpher == True %}
+              <p class="allergy">contain sulphur dioxide and/or sulphite</p>
+            {% endif %}
+            <p><i class="bi bi-currency-pound"></i>{{ drink.price01 }}</p>
+          </div>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+</body>

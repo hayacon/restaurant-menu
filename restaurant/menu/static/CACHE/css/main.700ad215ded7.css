@@ -1,0 +1,57 @@
+/* Bootstrap basic colors */
+/* line 38, menu/static/css/main.sass */
+body {
+  height: 100%;
+  min-height: 100%; }
+
+/* line 44, menu/static/css/main.sass */
+.food-menu {
+  padding-top: 40px; }
+
+/* line 47, menu/static/css/main.sass */
+.drink-menu {
+  padding-top: 130px; }
+
+/* line 50, menu/static/css/main.sass */
+.container {
+  padding: 10%; }
+
+/* line 53, menu/static/css/main.sass */
+#menu-item {
+  padding-top: 20px; }
+
+/* line 56, menu/static/css/main.sass */
+.menu-title {
+  padding-left: 20px;
+  padding-top: 10px;
+  font-family: "Courier New", monospace;
+  font-weight: bolder;
+  text-decoration: underline;
+  text-shadow: 1px 1px gray; }
+
+/* line 64, menu/static/css/main.sass */
+#item-name {
+  font-family: "Courier New", monospace;
+  font-weight: bold; }
+
+/* line 68, menu/static/css/main.sass */
+#item-description {
+  font-family: "Courier New", monospace; }
+
+/* line 71, menu/static/css/main.sass */
+#item-info {
+  font-family: "Courier New", monospace;
+  font-style: italic; }
+
+/* nav bar */
+/* line 77, menu/static/css/main.sass */
+.dropdown-menu {
+  background-color: #f8f9fa;
+  border: None; }
+
+/*footer */
+/* line 82, menu/static/css/main.sass */
+.footer {
+  background-color: #f8f9fa;
+  position: relative;
+  height: auto; }

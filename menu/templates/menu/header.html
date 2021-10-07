@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="SNS Application">
+  <meta name="keywords" content="advanced web dev, django, foundation, sns">
+  <meta name="author" content="Hayato C Ishida">
+
+  <!-- load bootstrap and other stylesheet -->
+  {% load static %}
+  {% load compress %}
+  {% compress css %}
+    <link type="text/x-scss" href="{% static 'bootstrap/bootstrap.scss' %}" rel="stylesheet" media="screen">
+    <link type="text/x-scss" href="{% static 'css/main.sass' %}" rel="stylesheet" media="screen">
+  {% endcompress %}
+  <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
+</head>

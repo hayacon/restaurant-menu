@@ -1,0 +1,56 @@
+{% include "./header.html" %}
+<body>
+  {% include "./nav.html" %}
+  <div class="container">
+    <h5>Menu item</h5>
+    <ul class="list-group">
+      {% for item in menu %}
+        {% if item.active == True %}
+          <li class="list-group-item">
+            <h6>{{ item.item_name }}</h6>
+            {% if item.runout == True %}
+            <p>Currently out of stock</p>
+            {% endif %}
+            <a class="btn btn-outline-primary" role="button" href="/update/{{ link }}/{{ item.item_name }}">edit</a>
+              <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                <form class="" action="index.html" method="post">
+                  {% if item.active %}
+                    <button class="btn btn-outline-danger" type="button" name="active_button" >Remove from menu</button>
+                  {% else %}
+                    <button class="btn btn-outline-success" type="button" name="active_button" >Add tp menu</button>
+                  {% endif %}
+                </form>
+                <form class="" action="index.html" method="post">
+                  {% if item.runout %}
+                    <button class="btn btn-outline-success" type="button" name="active_button" >Bring back to menu</button>
+                  {% else %}
+                    <button class="btn btn-outline-danger" type="button" name="active_button" >Runout</button>
+                  {% endif %}
+                </form>
+              </div>
+          </li>
+        </ul>
+      {% endif %}
+      {% endfor  %}
+      <h5>Items not in menu</h5>
+      {% for item in menu %}
+      {% if item.active == False %}
+        <ul class="list-group">
+          <li class="list-group-item">
+            <h6>{{ item.item_name }}</h6>
+            <a class="btn btn-outline-primary" role="button" href="/update/{{ link }}/{{ item.item_name }}">edit</a>
+              <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                <form class="" action="index.html" method="post">
+                  {% if item.active %}
+                    <button class="btn btn-outline-danger" type="button" name="active_button" >Remove from menu</button>
+                  {% else %}
+                    <button class="btn btn-outline-success" type="button" name="active_button" >Add tp menu</button>
+                  {% endif %}
+                </form>
+              </div>
+          </li>
+        </ul>
+      {% endif %}
+      {% endfor %}
+  </div>
+</body>

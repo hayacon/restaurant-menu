@@ -1,0 +1,6 @@
+<nav class="nav sticky-top bg-light">
+  {% for category in categories %}
+    <a class="nav-link active" aria-current="page" href="#{{ category }}">{{ category }}</a>
+  {% endfor %}
+  <a class="nav-link active" href="#" onclick="topFunction">Top</a>
+</nav>

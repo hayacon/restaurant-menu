@@ -1,0 +1,41 @@
+{% include "./header.html" %}
+<body class="food-menu">
+  {% include "./menu_nav.html" %}
+  {% for category in categories %}
+  <p>Please inform to our staff member if you have any allergy</p>
+    <h4 class='menu-title' id='{{ category }}'>{{ category }}</h4>
+    {% for food in food_menu %}
+      {% if food.runout == False and food.active == True %}
+        {% if food.category == category %}
+          <div class="container-sm" id="menu-item">
+            <h6 id="item-name">{{ food.item_name }}
+              <p id="item-description">{{ food.price }}</p>
+            </h6>
+            <p id="item-description">{{ food.description }}</p>
+            {% if food.glueten_free == True %}
+              <p id="item-info" class="gluten">gluten free</p>
+            {% endif %}
+            {% if food.glueten_free_option == True %}
+              <p id="item-info" class="gluten">gluten free option availble</p>
+            {% endif %}
+            {% if food.sesame == True %}
+              <p id="item-info" class="allergy">contain sesame</p>
+            {% endif %}
+            {% if food.soybeans == True %}
+              <p id="item-info" class="allergy">contain soybeans</p>
+            {% endif %}
+            {% if food.nuts == True %}
+              <p id="item-info" class="allergy">contain nuts</p>
+            {% endif %}
+            {% if food.peanuts == True %}
+              <p id="item-info" class="allergy">contain peanuts</p>
+            {% endif %}
+            {% if food.mustard == True %}
+              <p id="item-info" class="allergy">contain peanuts</p>
+            {% endif %}
+          </div>
+        {% endif %}
+    {% endif %}
+    {% endfor %}
+  {% endfor %}
+</body>
