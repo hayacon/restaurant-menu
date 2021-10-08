@@ -145,8 +145,6 @@ STATIC_PATH = os.path.join(BASE_DIR, 'menu/static')
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = 'menu/static/'
 
-
-
 SASS_PROCESSOR_ROOT = STATIC_ROOT
 
 SASS_PROCESSOR_INCLUDE_DIRS = [
