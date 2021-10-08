@@ -5,3 +5,5 @@ echo "-----> Compiling SCSS"
 python manage.py compilescss --traceback
 echo "-----> Collecting static files"
 python manage.py collectstatic --noinput --traceback
+echo "-----> Compiling SASS/SCSS"
+python manage.py compress --force
