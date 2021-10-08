@@ -1,6 +1,7 @@
 {% include "./header.html" %}
 <body class="drink-menu">
   {% include "./menu_nav.html" %}
+  <p>Please inform to our staff member if you have any allergy</p>
   {% for category in categories %}
     <h4 class='menu-title' id="{{ category }}">{{ category }}</h4>
     {% for drink in drink_menu %}

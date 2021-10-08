@@ -1,8 +1,8 @@
 {% include "./header.html" %}
 <body class="food-menu">
   {% include "./menu_nav.html" %}
-  {% for category in categories %}
   <p>Please inform to our staff member if you have any allergy</p>
+  {% for category in categories %}
     <h4 class='menu-title' id='{{ category }}'>{{ category }}</h4>
     {% for food in food_menu %}
       {% if food.runout == False and food.active == True %}

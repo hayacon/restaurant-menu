@@ -18,7 +18,7 @@ def addFood(request):
         food_form = FoodMenuItemForm(data=request.POST)
         if food_form.is_valid():
             food_form.save()
-            return redirect('/addFood/success')
+            return redirect('/addfood/success')
     else:
         food_form = FoodMenuItemForm()
 
