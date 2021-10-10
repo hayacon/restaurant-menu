@@ -18,6 +18,9 @@
             {% if food.glueten_free_option == True %}
               <p id="item-info" class="gluten">gluten free option availble</p>
             {% endif %}
+            {% if food.onion_garlic_free_option == True %}
+              <p id="item-info" class="gluten">onion garlic free option availble</p>
+            {% endif %}
             {% if food.sesame == True %}
               <p id="item-info" class="allergy">contain sesame</p>
             {% endif %}

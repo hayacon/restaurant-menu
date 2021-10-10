@@ -14,6 +14,7 @@ class FoodMenuItem(models.Model):
     runout = models.BooleanField(default=False)
     glueten_free = models.BooleanField(default=False)
     glueten_free_option = models.BooleanField(default=False)
+    onion_garlic_free_option = models.BooleanField(default=False)
     sesame = models.BooleanField(default=False)
     soybeans = models.BooleanField(default=False)
     nuts = models.BooleanField(default=False)
