@@ -51,6 +51,7 @@ body
 
 #menu-item
   padding-top: 20px
+  line-height: 16px
 
 .menu-title
   padding-left: 20px
@@ -60,41 +61,41 @@ body
   text-decoration: underline
   text-shadow: 1px 1px gray
   @include respond(phone-se)
-    font-size: 21px
-  @include respond(phone)
-    font-size: 31px
-  @include respond(phone-plus)
-    font-size: 41px
-
-
-#item-name
-  font-family: "Courier New", monospace
-  font-weight: bold
-  @include respond(phone-se)
     font-size: 15px
   @include respond(phone)
     font-size: 21px
   @include respond(phone-plus)
     font-size: 31px
 
+
+#item-name
+  font-family: "Courier New", monospace
+  font-weight: bold
+  @include respond(phone-se)
+    font-size: 8px
+  @include respond(phone)
+    font-size: 15px
+  @include respond(phone-plus)
+    font-size: 21px
+
 #item-description
   font-family: "Courier New", monospace
   @include respond(phone-se)
-    font-size: 13px
+    font-size: 10px
   @include respond(phone)
-    font-size: 16px
+    font-size: 12px
   @include respond(phone-plus)
-    font-size: 21px
+    font-size: 17px
 
 #item-info
   font-family: "Courier New", monospace
   font-style: italic
   @include respond(phone-se)
-    font-size: 13px
+    font-size: 10px
   @include respond(phone)
-    font-size: 16px
+    font-size: 12px
   @include respond(phone-plus)
-    font-size: 21px
+    font-size: 17px
 
 /* nav bar
 
@@ -109,11 +110,16 @@ body
   font-weight: bolder
 
   @include respond(phone)
-    font-size: 21px
+    font-size: 15px
     height: 10%
   @include respond(phone-plus)
-    font-size: 31px
+    font-size: 20px
     height: 10%
+
+#menu-nav-link
+  color: $secondary
+  text-decoration: underline
+
 
 
 /*footer
