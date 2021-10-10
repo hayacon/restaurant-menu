@@ -36,10 +36,10 @@ $dark:          $gray-900
 /* Media query
 @mixin respond($breakpoint)
   @if($breakpoint == phone)
-    @media (max-width: 600px) { @content }
+    @media only screen and (max-width: 600px) { @content }
 
   @if($breakpoint == tablet)
-    @media (max-width: 900px) { @content }
+    @media only screen and (max-width: 900px) { @content }
 
 
 
@@ -63,7 +63,7 @@ body
   text-decoration: underline
   text-shadow: 1px 1px gray
   @include respond(phone)
-    font-size: 100px
+    font-size: 60px
 
 
 #item-name
