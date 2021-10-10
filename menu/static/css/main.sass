@@ -33,6 +33,18 @@ $light:         $gray-100
 $dark:          $gray-900
 
 
+/* Media query
+@mixin respond($breakpoint)
+  @if($breakpoint == phone)
+    @media (max-width: 600px) { @content }
+
+  @if($breakpoint == tablet)
+    @media (max-width: 900px) { @content }
+
+
+
+
+
 body
   height: 100%
   min-height: 100%
@@ -50,6 +62,9 @@ body
   font-weight: bolder
   text-decoration: underline
   text-shadow: 1px 1px gray
+  @include respond(phone)
+    font-size: 31px
+  
 
 #item-name
   font-family: "Courier New", monospace
