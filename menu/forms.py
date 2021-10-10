@@ -30,7 +30,7 @@ class FoodMenuItemForm(forms.ModelForm):
     runout = forms.NullBooleanField(label='run-out', widget=forms.Select(choices=[(False,'no'),(True,'yes')]))
     glueten_free = forms.NullBooleanField(label='glueten free', widget=forms.Select(choices=[(False,'no'),(True,'yes')]))
     glueten_free_option = forms.NullBooleanField(label='glueten free option availble', widget=forms.Select(choices=[(False,'no'),(True,'yes')]))
-    onion_garlic_free_option = forms.NullBooleanField(label='glueten free option availble', widget=forms.Select(choices=[(False,'no'),(True,'yes')]))
+    onion_garlic_free_option = forms.NullBooleanField(label='onion garlic free option availble', widget=forms.Select(choices=[(False,'no'),(True,'yes')]))
     sesame = forms.NullBooleanField(label='contain sesame',widget=forms.Select(choices=[(False,'no'),(True,'yes')]))
     soybeans = forms.NullBooleanField(label='contain soybeans',widget=forms.Select(choices=[(False,'no'),(True,'yes')]))
     nuts = forms.NullBooleanField(label='contain nuts',widget=forms.Select(choices=[(False,'no'),(True,'yes')]))
