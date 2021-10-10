@@ -35,15 +35,12 @@ $dark:          $gray-900
 
 /* Media query
 @mixin respond($breakpoint)
+  @if($breakpoint == phone-se)
+    @media only screen and (max-width: 321px) { @content }
   @if($breakpoint == phone)
+    @media only screen and (max-width: 376px) { @content }
+  @if($breakpoint == phone-plus)
     @media only screen and (max-width: 600px) { @content }
-
-  @if($breakpoint == tablet)
-    @media only screen and (max-width: 900px) { @content }
-
-
-
-
 
 body
   height: 100%
@@ -62,20 +59,42 @@ body
   font-weight: bolder
   text-decoration: underline
   text-shadow: 1px 1px gray
+  @include respond(phone-se)
+    font-size: 21px
   @include respond(phone)
-    font-size: 60px
+    font-size: 31px
+  @include respond(phone-plus)
+    font-size: 41px
 
 
 #item-name
   font-family: "Courier New", monospace
   font-weight: bold
+  @include respond(phone-se)
+    font-size: 15px
+  @include respond(phone)
+    font-size: 21px
+  @include respond(phone-plus)
+    font-size: 31px
 
 #item-description
   font-family: "Courier New", monospace
+  @include respond(phone-se)
+    font-size: 13px
+  @include respond(phone)
+    font-size: 16px
+  @include respond(phone-plus)
+    font-size: 21px
 
 #item-info
   font-family: "Courier New", monospace
   font-style: italic
+  @include respond(phone-se)
+    font-size: 13px
+  @include respond(phone)
+    font-size: 16px
+  @include respond(phone-plus)
+    font-size: 21px
 
 /* nav bar
 
@@ -83,6 +102,18 @@ body
   background-color: $light
   border: None
 
+/*menu nac bar
+
+#menu-nav
+  font-family: "Courier New", monospace
+  font-weight: bolder
+
+  @include respond(phone)
+    font-size: 21px
+    height: 10%
+  @include respond(phone-plus)
+    font-size: 31px
+    height: 10%
 
 
 /*footer
