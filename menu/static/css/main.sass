@@ -36,11 +36,11 @@ $dark:          $gray-900
 /* Media query
 @mixin respond($breakpoint)
   @if($breakpoint == phone-se)
-    @media only screen and (max-width: 321px) { @content }
+    @media screen and (max-width: 321px) { @content }
   @if($breakpoint == phone)
-    @media only screen and (max-width: 376px) { @content }
+    @media screen and (max-width: 376px) { @content }
   @if($breakpoint == phone-plus)
-    @media only screen and (max-width: 600px) { @content }
+    @media screen and (max-width: 600px) { @content }
 
 body
   height: 100%
