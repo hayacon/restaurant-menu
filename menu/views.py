@@ -24,6 +24,7 @@ def addFood(request):
 
     return render(request, 'menu/add.html', {'form':food_form, 'title':title, 'action':action})
 
+
 def editFood(request):
     food_menu = FoodMenuItem.objects.all().order_by('item_name')
     link = 'food'
@@ -43,6 +44,34 @@ def updateFood(request, food):
         food_form = FoodMenuItemForm(instance=food_menu)
 
     return render(request, 'menu/add.html', {'form':food_form, 'title':title, 'action':action})
+
+def runoutFood(request, food):
+    """
+    runout button on food edit page
+    """
+    item = FoodMenuItem.objects.get(item_name=food)
+    if item.runout == False:
+        item.runout = True
+        item.save()
+    else:
+        item.runout = False
+        item.save()
+
+    return redirect('/editfood')
+
+def activeFood(request, food):
+    """
+    active button on food edit page
+    """
+    item = FoodMenuItem.objects.get(item_name=food)
+    if item.active == False:
+        item.active = True
+        item.save()
+    else:
+        item.active = False
+        item.save()
+
+    return redirect('/editfood')
 
 def addFoodSuccess(request):
     message = "Food item successfully saved 🙌🏼"
@@ -85,6 +114,34 @@ def updateDrink(request, drink):
         drink_form = DrinkMenuItemForm(instance=drink_menu)
 
     return render(request, 'menu/add.html', {'form':drink_form, 'title':title, 'action':action})
+
+def runoutDrink(request, drink):
+    """
+    runout button on food edit page
+    """
+    item = DrinkMenuItem.objects.get(item_name=drink)
+    if item.runout == False:
+        item.runout = True
+        item.save()
+    else:
+        item.runout = False
+        item.save()
+
+    return redirect('/editdrink')
+
+def activeDrink(request, drink):
+    """
+    active button on food edit page
+    """
+    item = DrinkMenuItem.objects.get(item_name=drink)
+    if item.active == False:
+        item.active = True
+        item.save()
+    else:
+        item.active = False
+        item.save()
+
+    return redirect('/editdrink')
 
 def addDrinkSuccess(request):
     message = "Drink item successfully saved 🙌🏼"
