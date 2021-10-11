@@ -28,7 +28,11 @@ def addFood(request):
 def editFood(request):
     food_menu = FoodMenuItem.objects.all().order_by('item_name')
     link = 'food'
-    return render(request, "menu/edit.html", {'menu':food_menu, 'link':link})
+    food_category = FoodMenuItem._meta.get_field('category').choices
+    category = []
+    for c in food_category:
+        category.append(c[0])
+    return render(request, "menu/edit.html", {'menu':food_menu, 'link':link, 'categories':category})
 
 def updateFood(request, food):
     title = "Edit food item"
@@ -98,7 +102,11 @@ def addDrink(request):
 def editDrink(request):
     drink_menu = DrinkMenuItem.objects.all().order_by('item_name')
     link = 'drink'
-    return render(request, "menu/edit.html", {'menu':drink_menu, 'link':link})
+    drink_category = DrinkMenuItem._meta.get_field('category').choices
+    category = []
+    for c in drink_category:
+        category.append(c[0])
+    return render(request, "menu/edit.html", {'menu':drink_menu, 'link':link, 'categories':category})
 
 def updateDrink(request, drink):
     title = "Edit drink item"

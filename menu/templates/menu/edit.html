@@ -2,9 +2,12 @@
 <body>
   {% include "./nav.html" %}
   <div class="container">
-    <h5>Menu item</h5>
+    <h4>Menu item</h4>
+    {% for category in categories %}
+    <h5>{{ category }}</h5>
     <ul class="list-group">
       {% for item in menu %}
+      {% if item.category == category %}
         {% if item.active == True %}
           <li class="list-group-item">
             <h6>{{ item.item_name }}</h6>
@@ -25,9 +28,14 @@
           </li>
         </ul>
       {% endif %}
+      {% endif %}
       {% endfor  %}
-      <h5>Items not in menu</h5>
+    {% endfor %}
+    <h4>Items not in menu</h4>
+    {% for category in categories %}
+    <h5>{{ category }}</h5>
       {% for item in menu %}
+      {% if item.category == category %}
       {% if item.active == False %}
         <ul class="list-group">
           <li class="list-group-item">
@@ -41,7 +49,9 @@
           </li>
         </ul>
       {% endif %}
+      {% endif %}
       {% endfor %}
+    {% endfor %}
   </div>
 </body>
 {% include "./footer.html" %}
