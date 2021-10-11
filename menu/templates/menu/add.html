@@ -1,13 +1,13 @@
 {% include "./header.html" %}
 <body>
   {% include "./nav.html" %}
-  <div class="container">
+  <div class="container" id="form">
     <h3>{{ title }}</h3>
-    <form class="foodaddform" action="{{ action }}" method="post">
+    <form class="addform" action="{{ action }}" method="post">
       {% csrf_token %}
       {{ form.as_p }}
       <button type="submit" class="btn btn-primary">Add</button>
     </form>
   </div>
-  {% include "./footer.html" %}
 </body>
+{% include "./footer.html" %}

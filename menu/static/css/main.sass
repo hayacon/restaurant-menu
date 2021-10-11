@@ -36,11 +36,11 @@ $dark:          $gray-900
 /* Media query
 @mixin respond($breakpoint)
   @if($breakpoint == phone-se)
-    @media screen and (max-width: 321px) { @content }
+    @media screen and (max-device-width: 321px) { @content }
   @if($breakpoint == phone)
-    @media screen and (max-width: 376px) { @content }
+    @media screen and (max-device-width: 376px) { @content }
   @if($breakpoint == phone-plus)
-    @media screen and (max-width: 600px) { @content }
+    @media screen and (max-device-width: 600px) { @content }
 
 body
   height: 100%
@@ -102,6 +102,28 @@ body
 .dropdown-menu
   background-color: $light
   border: None
+  font-size: 20px
+  @include respond(phone)
+    font-size: 30px
+  @include respond(phone-plus)
+    font-size: 40px
+
+#main-nav
+  height: 100px
+
+.nav-link
+  font-size: 20px
+  @include respond(phone)
+    font-size: 30px
+  @include respond(phone-plus)
+    font-size: 40px
+
+.navbar-brand
+  font-size: 20px
+  @include respond(phone)
+    font-size: 30px
+  @include respond(phone-plus)
+    font-size: 40px
 
 /*menu nac bar
 
@@ -121,10 +143,11 @@ body
   text-decoration: underline
 
 
+/* Add form
+
 
 /*footer
 .footer
   background-color: $light
   position: relative
-  height: 30px
   text-align: center
