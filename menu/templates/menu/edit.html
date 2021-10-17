@@ -17,12 +17,12 @@
             <a class="btn btn-outline-primary" role="button" href="/update/{{ link }}/{{ item.item_name }}">edit</a>
               <div class="btn-group" role="group" aria-label="Basic mixed styles example">
                   {% if item.active %}
-                    <a class="btn btn-outline-danger" role="button" href="/active/{{ link }}/{{ item.item_name}}">Remove from menu</a>
+                    <a class="btn btn-outline-danger" id="edit-button" role="button" href="/active/{{ link }}/{{ item.item_name}}">Remove from menu</a>
                   {% endif %}
                   {% if item.runout %}
-                    <a class="btn btn-outline-success" role="button" href="/runout/{{ link }}/{{ item.item_name }}">Bring back to menu</a>
+                    <a class="btn btn-outline-success" id="edit-button" role="button" href="/runout/{{ link }}/{{ item.item_name }}">Bring back to menu</a>
                   {% else %}
-                    <a class="btn btn-outline-danger" role="button" href="/runout/{{ link }}/{{ item.item_name }}">Runout</a>
+                    <a class="btn btn-outline-danger" id="edit-button" role="button" href="/runout/{{ link }}/{{ item.item_name }}">Runout</a>
                   {% endif %}
               </div>
           </li>
@@ -43,7 +43,7 @@
             <a class="btn btn-outline-primary" role="button" href="/update/{{ link }}/{{ item.item_name }}">edit</a>
               <div class="btn-group" role="group" aria-label="Basic mixed styles example">
                 <form class="" action="index.html" method="post">
-                    <a class="btn btn-outline-success" role="button" href="/active/{{ link }}/{{ item.item_name}}">Add to menu</a>
+                    <a class="btn btn-outline-success" id="edit-button" role="button" href="/active/{{ link }}/{{ item.item_name}}">Add to menu</a>
                 </form>
               </div>
           </li>

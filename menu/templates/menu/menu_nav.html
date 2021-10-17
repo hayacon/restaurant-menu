@@ -1,6 +1,22 @@
-<nav class="nav sticky-top bg-light" id="menu-nav">
-  {% for category in categories %}
-    <a class="nav-link" id="menu-nav-link" aria-current="page" href="#{{ category }}">{{ category }}</a>
-  {% endfor %}
-  <a class="nav-link" id="menu-nav-link" href="#" onclick="topFunction">Top</a>
+<nav class="navbar sticky-top navbar-light navbar-expand-sm" id="menu-nav">
+  <div class="container-sm">
+    <button
+    class="navbar-toggler"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#navbarNav"
+    aria-controls="navbarNav"
+    aria-expanded="false"
+    aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav bg-light">
+        {% for category in categories %}
+          <li class="nav-item"><a class="nav-link" id="menu-nav-link" aria-current="page" href="#{{ category }}">{{ category }}</a></li>
+        {% endfor %}
+        <li class="nav-item"><a class="nav-link" id="menu-nav-link" href="#" onclick="topFunction">Top</a></li>
+      </ul>
+    </div>
+  </div>
 </nav>
