@@ -8,9 +8,9 @@
       {% if food.runout == False and food.active == True %}
         {% if food.category == category %}
           <div class="container-sm" id="menu-item">
-            <h6 id="item-name">{{ food.item_name }}
+            <h3 id="item-name">{{ food.item_name }}
               <p id="item-name">{{ food.price }}</p>
-            </h6>
+            </h3>
             <p id="item-description">{{ food.description }}</p>
             {% if food.glueten_free == True %}
               <p id="item-info" class="gluten">gluten free</p>
