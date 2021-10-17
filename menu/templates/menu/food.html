@@ -12,30 +12,32 @@
               <p id="item-name">{{ food.price }}</p>
             </h2>
             <p id="item-description">{{ food.description }}</p>
+            <ul>
             {% if food.glueten_free == True %}
-              <p id="item-info" class="gluten">gluten free</p>
+              <li id="item-info" class="gluten">gluten free</li>
             {% endif %}
             {% if food.glueten_free_option == True %}
-              <p id="item-info" class="gluten">gluten free option availble</p>
+              <li id="item-info" class="gluten">gluten free option availble</li>
             {% endif %}
             {% if food.onion_garlic_free_option == True %}
-              <p id="item-info" class="gluten">onion garlic free option availble</p>
+              <li id="item-info" class="gluten">onion garlic free option availble</li>
             {% endif %}
             {% if food.sesame == True %}
-              <p id="item-info" class="allergy">contain sesame</p>
+              <li id="item-info" class="allergy">contain sesame</li>
             {% endif %}
             {% if food.soybeans == True %}
-              <p id="item-info" class="allergy">contain soybeans</p>
+              <li id="item-info" class="allergy">contain soybeans</li>
             {% endif %}
             {% if food.nuts == True %}
-              <p id="item-info" class="allergy">contain nuts</p>
+              <li id="item-info" class="allergy">contain nuts</li>
             {% endif %}
             {% if food.peanuts == True %}
-              <p id="item-info" class="allergy">contain peanuts</p>
+              <li id="item-info" class="allergy">contain peanuts</li>
             {% endif %}
             {% if food.mustard == True %}
-              <p id="item-info" class="allergy">contain peanuts</p>
+              <li id="item-info" class="allergy">contain peanuts</li>
             {% endif %}
+            </ul>
           </div>
         {% endif %}
     {% endif %}

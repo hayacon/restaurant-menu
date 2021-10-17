@@ -3,12 +3,12 @@
   {% include "./menu_nav.html" %}
   <p>Please inform to our staff member if you have any allergy</p>
   {% for category in categories %}
-    <h4 class='menu-title' id="{{ category }}">{{ category }}</h4>
+    <h1 class='menu-title' id="{{ category }}">{{ category }}</h1>
     {% for drink in drink_menu %}
       {% if drink.runout == False and drink.active == True %}
         {% if drink.category == category %}
           <div class="container-sm" id="menu-item">
-            <h6>{{ drink.item_name }}</h6>
+            <h2>{{ drink.item_name }}</h2>
             <p>{{ drink.description }}</p>
             {% if drink.sulpher == True %}
               <p class="allergy">contain sulphur dioxide and/or sulphite</p>
