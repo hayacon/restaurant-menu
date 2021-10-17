@@ -4,7 +4,7 @@
   <div class="container">
     <h4>Menu item</h4>
     {% for category in categories %}
-    <h5>{{ category }}</h5>
+    <h6>{{ category }}</h6>
     <ul class="list-group">
       {% for item in menu %}
       {% if item.category == category %}
@@ -33,7 +33,7 @@
     {% endfor %}
     <h4>Items not in menu</h4>
     {% for category in categories %}
-    <h5>{{ category }}</h5>
+    <h6>{{ category }}</h6>
       {% for item in menu %}
       {% if item.category == category %}
       {% if item.active == False %}
