@@ -60,6 +60,13 @@ body
   font-weight: bolder
   text-decoration: underline
   text-shadow: 1px 1px gray
+  @include respond(phone-se)
+    font-size: 50px
+  @include respond(phone)
+    font-size: 50px
+  @include respond(phone-plus)
+    font-size: 50px
+
 
 #item-name
   font-family: "Courier New", monospace
