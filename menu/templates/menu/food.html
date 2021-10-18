@@ -5,12 +5,19 @@
   {% for category in categories %}
     <h1 class='menu-title' id='{{ category }}'>{{ category }}</h1>
     {% for food in food_menu %}
-      {% if food.runout == False and food.active == True %}
+      {% if food.active == True %}
         {% if food.category == category %}
           <div class="container-sm" id="menu-item">
+            {% if food.runout == False %}
             <h2 id="item-name">{{ food.item_name }}
               <p id="item-name">{{ food.price }}</p>
             </h2>
+            {% else %}
+            <h2 id="item-name" style="text-decoration: line-through">{{ food.item_name }}
+              <p id="item-name">{{ food.price }}</p>
+            </h2>
+            <p id="runout-msg">sorry, runout</p>
+            {% endif %}
             <p id="item-description">{{ food.description }}</p>
             <ul>
             {% if food.glueten_free == True %}

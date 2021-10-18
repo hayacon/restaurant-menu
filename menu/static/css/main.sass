@@ -44,8 +44,9 @@ $wine-red: #58181F
     @media screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) { @content }
 
 body
-  height: 100%
-  min-height: 100%
+  min-height: 100vh
+  display: flex
+  flex-direction: column
 
 .container
   padding: 10%
@@ -104,6 +105,8 @@ body
   @include respond(phone-plus)
     font-size: 17px
 
+#runout-msg
+  color: $danger
 /* nav bar
 
 .dropdown-menu
@@ -134,7 +137,6 @@ body
 
 /*menu nav bar
 
-
 #menu-nav
   font-family: "Courier New", monospace
   font-weight: bolder
@@ -164,7 +166,9 @@ body
 
 
 /*footer
-.footer
+footer
+  padding-top: auto
   background-color: $light
-  position: fixed
   text-align: center
+  width: 100%
+  bottom: 0px
