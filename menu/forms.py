@@ -21,7 +21,7 @@ DRINK_CATEGORY_CHOICES = [
 ]
 
 class FoodMenuItemForm(forms.ModelForm):
-    item_name = forms.CharField(label='', widget=forms.TextInput(attrs={'placeholder':'name', 'class':'menu-form'}))
+    item_name = forms.CharField(label='', widget=forms.TextInput(attrs={'placeholder':'name', 'class':'menu-form', 'size':'30vw'}))
     description = forms.CharField(label='',
     widget=forms.Textarea(attrs={'placeholder':'description', 'class':'menu-form'}), required=False)
     category = forms.ChoiceField(label='category', choices=FOOD_CATEGORY_CHOICES, widget=forms.Select(attrs={'placeholder':'category', 'class':'menu-form'}))
